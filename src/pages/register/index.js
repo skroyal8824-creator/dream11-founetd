@@ -133,10 +133,10 @@ export function Register() {
       if (data.data.success) {
         setSuccess(data.data.message);
         alert.success(data.data.message);
-        //setOpen(true);
-        navigate('/login')
+        setOpen(true);
+        //navigate('/login')
       } else {
-        alert.error(e.response.data.message);
+        alert.error(data.data.message);
         setErr(data.data.message);
       }
     } catch (e) {

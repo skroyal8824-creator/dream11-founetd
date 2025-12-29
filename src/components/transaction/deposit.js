@@ -360,6 +360,7 @@ export default function Deposit({ tabs, g, livescore }) {
                 <UploadInput
                   id="file-upload"
                   type="file"
+                  accept="image/*"
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <Button
@@ -367,10 +368,16 @@ export default function Deposit({ tabs, g, livescore }) {
                   component="span"
                   fullWidth
                   sx={{ py: 1.2, borderRadius: 2 }}
+                  aria-label="Upload Screenshot"
                 >
-                  Upload Screenshot
+                  {file ? "Change Screenshot" : "Upload Screenshot"}
                 </Button>
               </label>
+              {file && (
+                <Typography variant="body2" sx={{ mt: 1, color: "text.secondary" }}>
+                  Selected file: {file.name}
+                </Typography>
+              )}
             </Box>
 
             {/* Warning Note */}

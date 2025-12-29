@@ -103,9 +103,7 @@ const CreateTeam = styled.div`
 `;
 
 const PlayersList = styled.div`
-  padding: 0 0;
-  height: 400px;
-  overflow-y: auto;
+  padding-bottom: 180px;
 `;
 
 const EachPlayer = styled.div`

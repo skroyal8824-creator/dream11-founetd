@@ -154,6 +154,7 @@ const tabs = [{ label: 'winnings' }, { label: 'leaderboard' }];
 export function ContestDetail() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const { match_details, matchlive } = useSelector((state) => state.match);
+  const [match_data, setMatch_Data] = useState(null)
   const { state } = useLocation();
   const dispatch = useDispatch();
   const [upcoming, setUpcoming] = useState([]);
@@ -188,6 +189,17 @@ export function ContestDetail() {
     }
     getteams();
   }, [id]);
+
+  useEffect(() => {
+    if (match_details?.matchId) {
+      async function get_players() {
+        const data = await API.get(`${URL}/getplayers_new/${match_details?.matchId}`);
+        setMatch_Data(data.data.players)
+      }
+      get_players()
+    }
+  }, [match_details]);
+
   useEffect(() => {
     async function getplayers() {
       if (user?._id && match_details?.matchId) {
@@ -351,7 +363,7 @@ export function ContestDetail() {
                 setSelectTeams={setSelectTeams}
                 selectedTeam={selectedTeam}
                 setSelectedTeam={setSelectedTeam}
-                match={matchlive || match_details}
+                match={matchlive || match_data}
                 matchdetails={match_details}
               />
             ))}

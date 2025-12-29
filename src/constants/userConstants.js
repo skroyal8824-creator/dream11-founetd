@@ -63,11 +63,11 @@ function geturl() {
     // return 'http://192.168.237.175:8000';
     // return 'http://46.28.44.4:8000';
     // return "https://dreamelevenclonebackend-g4iw.onrender.com";
-    // return "https://fantasycricket4u.com";
+    // return "https://dreamcricket11.com";
     // return "https://backend.dreambet11.io";
-    // return "https://gclteam.duckdns.org";
-    return "https://dream11-api.insenc.in";
-    // return "http://localhost:9000";
+    return "https://gclteam.duckdns.org";
+    // return "https://dream11-api.insenc.in";
+    // return "http://localhost:8000";
     // return "https://mangogames.fun/api"
   }
   // return "https://dreamelevenclonebackend-7l34.onrender.com";
@@ -79,13 +79,14 @@ function geturl() {
   // return "http://54.172.255.164";
   // return 'https://apk.thepowerplay.co';
   // return 'http://localhost:8000';
+  return "https://gclteam.duckdns.org";
   // return 'http://46.28.44.4:8000';
-  // return "https://fantasycricket4u.com";
+  // return "https://dreamcricket11.com";
   // return "https://dreamelevenclonebackend-g4iw.onrender.com"
   // return "https://backend.dreambet11.io";
   // return "https://gamizo.duckdns.org";
   // return "https://gclteam.duckdns.org"
-  return "https://dream11-api.insenc.in";
+  // return "https://dream11-api.insenc.in";
 }
 
 function getfrontendurl() {

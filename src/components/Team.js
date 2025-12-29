@@ -336,6 +336,7 @@ export function Team({
 }) {
   const navigate = useNavigate();
   const { match_details, matchlive } = useSelector((state) => state.match);
+  console.log(captains,'selected players')
   return (
     <EachTeam>
       {matchinfo.length > 0 && captains.length > 0 && (

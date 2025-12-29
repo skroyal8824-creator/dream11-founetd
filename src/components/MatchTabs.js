@@ -373,6 +373,7 @@ export default function MatchTabs({ tabs, g, livescore, getdata }) {
   );
   const { id } = useParams();
   const { match_details, matchlive } = useSelector((state) => state.match);
+  const [match_data, setMatch_Data] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [team, setTeam] = React.useState(null);
   const [leaderboard, setLeaderboard] = React.useState([]);
@@ -406,6 +407,14 @@ export default function MatchTabs({ tabs, g, livescore, getdata }) {
       team: selectedTeam,
     });
   }, [selectedTeam]);
+
+  useEffect(() => {
+    async function get_players() {
+      const data = await API.get(`${URL}/getplayers_new/${id}`);
+      setMatch_Data(data.data.players)
+    }
+    get_players()
+  }, [id]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -546,7 +555,7 @@ export default function MatchTabs({ tabs, g, livescore, getdata }) {
                   totalSpots={tab.totalSpots}
                   spotsLeft={tab.spotsLeft}
                   numWinners={tab.numWinners}
-                  isAlmostFull={tab.spotsLeft <= 10}
+                  isAlmostFull={tab.spotsLeft <= 10 && tab.totalSpots > 10}
                   onJoin={e => handleOpen(e, tab)}
                   onClick={() => navigate(`/contestdetail/${tab._id}`, { state: { match_details: matchlive } })}
                 />
@@ -585,8 +594,8 @@ export default function MatchTabs({ tabs, g, livescore, getdata }) {
           {team?.length > 0
             && team.map((t) => (
               <TeamShort
-                match={matchlive || match_details}
-                match_info={match_details}
+                match={matchlive || match_data}
+                match_info={match_data}
                 players={t.players}
                 plo={t}
                 id={id}
@@ -695,7 +704,7 @@ export default function MatchTabs({ tabs, g, livescore, getdata }) {
                   setSelectTeams={setSelectTeams}
                   selectedTeam={selectedTeam}
                   setSelectedTeam={setSelectedTeam}
-                  match={matchlive || match_details}
+                  match={matchlive || match_data}
                   matchdetails={match_details}
                 />
               ))}

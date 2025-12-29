@@ -344,11 +344,12 @@ export function SelectTeam({
   }, [plo, match]);
 
   useEffect(() => {
+    console.log(players,"players")
     const pl = players.map((obj) => ({
       ...obj,
     }));
     setSelectedPlayers([...pl]);
-  }, [id]);
+  }, [id,players]);
 
   const handleCaptain = (i) => {
     const op = players.map((p) => {
@@ -390,6 +391,7 @@ export function SelectTeam({
   const handleChange = (i) => {
     setSelectedTeam(i);
   };
+  console.log(captains,plo,match,'captains')
   return (
     <Container>
       <Teams>
