@@ -65,7 +65,7 @@ function geturl() {
     // return "https://dreamelevenclonebackend-g4iw.onrender.com";
     // return "https://dreamcricket11.com";
     // return "https://backend.dreambet11.io";
-    return "https://gclteam.duckdns.org";
+    return "https://dream11-backo.onrender.com";
     // return "https://dream11-api.insenc.in";
     // return "http://localhost:8000";
     // return "https://mangogames.fun/api"
@@ -79,7 +79,7 @@ function geturl() {
   // return "http://54.172.255.164";
   // return 'https://apk.thepowerplay.co';
   // return 'http://localhost:8000';
-  return "https://gclteam.duckdns.org";
+  return "https://dream11-backo.onrender.com";
   // return 'http://46.28.44.4:8000';
   // return "https://dreamcricket11.com";
   // return "https://dreamelevenclonebackend-g4iw.onrender.com"
@@ -95,7 +95,7 @@ function getfrontendurl() {
     return 'http://localhost:3000';
   }
   //return 'http://localhost:3000';
-  return 'https://dream-11-clone-nu.vercel.app';
+  return 'dream11-founetd.vercel.app';
 }
 
 export const URL = geturl();
