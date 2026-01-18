@@ -95,7 +95,7 @@ function getfrontendurl() {
     return 'http://localhost:3000';
   }
   //return 'http://localhost:3000';
-  return 'dream11-founetd.vercel.app';
+  return 'https://dream11-backo.onrender.com';
 }
 
 export const URL = geturl();
