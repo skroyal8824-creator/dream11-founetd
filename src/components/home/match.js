@@ -137,6 +137,16 @@ export function Match({ u, live }) {
       navigate('/login');
     }
   }, []);
+  const homeCount = u?.teamHomePlayers?.length || 0;
+const awayCount = u?.teamAwayPlayers?.length || 0;
+
+let lineupText = "";
+
+if (homeCount >= 11 && awayCount >= 11) {
+  lineupText = "Lineups Out";
+} else if (homeCount > 0 || awayCount > 0) {
+  lineupText = "Squad Available";
+}
   const handleClick = () => {
     setOpen(true);
   };
@@ -173,7 +183,7 @@ export function Match({ u, live }) {
             width: '35%',
           }}
         >
-          {live || u.lineups}
+          {live ? "LIVE" : lineupText}
         </h5>
       </Top>
       <div className="match">
